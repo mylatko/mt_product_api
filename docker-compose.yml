@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  nginx:
+    container_name: mytheresa_nginx
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    restart: on-failure
+    ports:
+      - 99:80
+    volumes:
+      - ./logs/nginx:/var/log/nginx:rw
+      - ./sources:/var/www:rw
+    depends_on:
+      - php
+    networks:
+      - mytheresa
+
+  php:
+    container_name: mytheresa_php
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./sources:/var/www/
+    networks:
+      - mytheresa
+
+networks:
+  mytheresa:

@@ -1,0 +1,7 @@
+logs
+sources/var
+sources/vendor
+sources/cache
+sources/.htaccess
+sources/.env.local
+/.idea
