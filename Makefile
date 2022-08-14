@@ -33,3 +33,6 @@ test:			##run tests
     php bin/console --env=test doctrine:migrations:migrate -n && \
     php bin/console --env=test doctrine:fixtures:load -n && \
     vendor/bin/codecept run api"
+
+stan: 			##check stan
+	docker exec -it mytheresa_php /bin/bash -c "php -d memory_limit=256M vendor/bin/phpstan analyse src"

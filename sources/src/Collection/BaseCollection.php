@@ -5,8 +5,10 @@ declare(strict_types=1);
 
 namespace App\Collection;
 
+use App\Exception\InvalidValueException;
 use Doctrine\Common\Collections\Collection;
 use Closure;
+use http\Exception\InvalidArgumentException;
 
 abstract class BaseCollection
 {
