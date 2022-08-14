@@ -1,3 +1,8 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+product_list:
+    path: /product
+    controller: App\Controller\ProductController::index
+    methods: GET
