@@ -26,7 +26,7 @@ class ProductRequestResolver implements ArgumentValueResolverInterface
      */
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
     {
-        $category = $request->get('category', '');
+        $category = $request->get('category', null);
         $priceLessThan = (int)$request->get('priceLessThan', 0);
 
         yield new ProductRequest(

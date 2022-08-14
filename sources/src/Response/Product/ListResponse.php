@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Response;
+namespace App\Response\Product;
 
 use App\Service\Product\ProductCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;

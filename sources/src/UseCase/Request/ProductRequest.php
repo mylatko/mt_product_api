@@ -13,11 +13,11 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 class ProductRequest implements RequestInterface
 {
-    protected string $category;
+    protected ?string $category;
     protected int $priceLessThan;
 
     public function __construct(
-        string $category,
+        ?string $category,
         int $priceLessThan
     )
     {
@@ -27,7 +27,11 @@ class ProductRequest implements RequestInterface
 
     public function getCategory(): string
     {
-        return ucfirst($this->category);
+        if (null !== $this->category) {
+            return ucfirst($this->category);
+        }
+
+        return '';
     }
 
     public function getPriceLessThan(): int

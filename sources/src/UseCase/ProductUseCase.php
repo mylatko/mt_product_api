@@ -49,10 +49,10 @@ class ProductUseCase extends BaseUseCase
     {
         $criteria = new Criteria();
 
-        if ($request->getCategory()) {
+        if (null != $request->getCategory()) {
             $criteria->andWhere(Criteria::expr()->eq('category', $request->getCategory()));
         }
-        if ($request->getPriceLessThan()) {
+        if (null != $request->getPriceLessThan()) {
             $criteria->andWhere(Criteria::expr()->lte('price', $request->getPriceLessThan()));
         }
 

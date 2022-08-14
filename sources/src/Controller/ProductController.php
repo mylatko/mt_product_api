@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Response\ListResponse;
+use App\Response\Product\ListResponse;
 use App\UseCase\ProductUseCase;
 use App\UseCase\Request\ProductRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
